@@ -12,6 +12,11 @@ Exemplo
 
 <img src="ImagesProject/Info.jpeg" width="260" >   <img src="ImagesProject/Search.jpeg" width="260" >  <img src="ImagesProject/Profile.jpeg" width="260" > 
 
+### :bulb: Requisitos:
+- iOS 13.0+ 
+- Xcode 12.5+
+- Swift 5.0+
+
 ### :desktop_computer:  Deverá ter instalado em sua máquina:
 - [Cocoapods](https://guides.cocoapods.org/using/getting-started.html)
 
