@@ -21,8 +21,8 @@ Example
 $ pod install
 ```
 
-- Sempre abra o projeto pelo arquivo Recone.xcworkspace
+- Quando for abrir o projeto sempre selecione o arquivo Recone.xcworkspace
 
-- Selecione o simulador de sua preferência e build o projeto
+- Para buildar o projeto basta selecionar o simulador de sua preferência.
 
-:star_struck: Pronto, se tudo ocorrer bem, você deverá ser capaz de rodar o projeto em sua máquina
+:star_struck: Se seguir esse passo a passo, assim você consiguirá rodar o projeto em sua máquina.
