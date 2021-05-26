@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 final class DetailViewController: UIViewController {
     
@@ -40,6 +41,14 @@ final class DetailViewController: UIViewController {
     }
     
     private func bind() {
+        customDetail.scrollViewDetail.didTapLinkJob = { [weak self] button in
+            if let url = URL(string: "https://github.com/")
+             {
+               let safariVC = SFSafariViewController(url: url)
+                self?.present(safariVC, animated: true, completion: nil)
+             }
+        }
+        
         customDetail.scrollViewDetail.didTapBack = { [weak self] button in
             self?.dismiss(animated: true)
         }

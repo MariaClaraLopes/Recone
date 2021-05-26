@@ -32,7 +32,7 @@ final class InfoView: UIView {
         return image
     }()
     
-    private let logoLabelTitle: UILabel = {
+    private let logoTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Rede de conexão para "
         label.font = Fonts.nunitoRegular(size: 20)
@@ -40,7 +40,7 @@ final class InfoView: UIView {
         return label
     }()
     
-    private let logoLabelTitleColor: UILabel = {
+    private let logoTitleColorLabel: UILabel = {
         let label = UILabel()
         label.text = "neurodiversos"
         label.font = Fonts.nunitoSemiBold(size: 20)
@@ -48,7 +48,7 @@ final class InfoView: UIView {
         return label
     }()
     
-    private let logoLabelSubTitle: UILabel = {
+    private let logoSubTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Aqui reconhecemos e integramos suas capacidades!"
         label.lineBreakMode = .byWordWrapping
@@ -80,9 +80,9 @@ final class InfoView: UIView {
         addSubview(logoContentView)
         logoContentView.addSubview(buttonBack)
         logoContentView.addSubview(logoImageView)
-        logoContentView.addSubview(logoLabelTitle)
-        logoContentView.addSubview(logoLabelTitleColor)
-        logoContentView.addSubview(logoLabelSubTitle)
+        logoContentView.addSubview(logoTitleLabel)
+        logoContentView.addSubview(logoTitleColorLabel)
+        logoContentView.addSubview(logoSubTitleLabel)
         addSubview(scrollViewInfo)
     }
     
@@ -107,29 +107,29 @@ final class InfoView: UIView {
             make.width.equalTo(151)
         }
         
-        logoLabelTitle.snp.makeConstraints { (make) in
+        logoTitleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(logoImageView.snp_bottomMargin).offset(32)
             make.left.equalToSuperview().offset(24)
             make.height.equalTo(24)
             make.width.equalTo(300)
         }
         
-        logoLabelTitleColor.snp.makeConstraints { (make) in
-            make.top.equalTo(logoLabelTitle.snp_bottomMargin).offset(2)
+        logoTitleColorLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(logoTitleLabel.snp_bottomMargin).offset(2)
             make.left.equalToSuperview().offset(24)
             make.height.equalTo(24)
             make.width.equalTo(300)
         }
         
-        logoLabelSubTitle.snp.makeConstraints { (make) in
-            make.top.equalTo(logoLabelTitleColor.snp_bottomMargin).offset(12)
+        logoSubTitleLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(logoTitleColorLabel.snp_bottomMargin).offset(12)
             make.left.equalToSuperview().offset(24)
             make.height.equalTo(48)
             make.width.equalTo(300)
         }
         
         scrollViewInfo.snp.makeConstraints { (make) in
-            make.top.equalTo(logoLabelSubTitle.snp_bottomMargin).offset(24)
+            make.top.equalTo(logoSubTitleLabel.snp_bottomMargin).offset(24)
             make.left.right.bottom.equalToSuperview()
         }
     }

@@ -15,6 +15,13 @@ class LoginViewController: UIViewController {
         self.view = customLogin
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        customLogin.emailTextField.text = ""
+        customLogin.passwordTextField.text = ""
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
@@ -24,13 +31,13 @@ class LoginViewController: UIViewController {
         let loginModel = LoginModel()
         customLogin.didTapOk = { [weak self] credential in
             guard let self = self else {return}
-            let emailTextField: String = self.customLogin.emailTextField.text ?? ""
-            let passwordTextField: String = self.customLogin.passwordTextField.text ?? ""
+            let emailTextField: String = self.customLogin.emailTextField.text?.replacingOccurrences(of: " ", with: "") ?? ""
+            let passwordTextField: String = self.customLogin.passwordTextField.text?.replacingOccurrences(of: " ", with: "") ?? ""
             if emailTextField.isEmpty || passwordTextField.isEmpty {
                 self.customLogin.loginError()
             } else if emailTextField != loginModel.email || passwordTextField != loginModel.password {
                 self.customLogin.loginError()
-            } else {
+            } else if emailTextField == loginModel.email && passwordTextField == loginModel.password{
                 let user = self.makeUser()
                 self.makeController(user: user)
             }
@@ -42,14 +49,12 @@ class LoginViewController: UIViewController {
     }
     
     private func makeController(user: User) {
-        customLogin.didTapOk = { [weak self] button in
-            let profileVC = ProfileViewController()
-            profileVC.updateUser(user: user)
-            profileVC.modalPresentationStyle = .fullScreen
-            self?.present(profileVC, animated: true, completion: nil)
-            
-            AppSession.updateUser(isLoggedIn: true)
-        }
+        let profileVC = ProfileViewController()
+        profileVC.updateUser(user: user)
+        profileVC.modalPresentationStyle = .fullScreen
+        self.present(profileVC, animated: true, completion: nil)
+        
+        AppSession.updateUser(isLoggedIn: true)
     }
     
     private func makeUser() -> User {

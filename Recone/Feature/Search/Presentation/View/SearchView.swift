@@ -51,6 +51,7 @@ final class SearchView: UIView {
     }
     
     private func setupView() {
+        searchBar.delegate = self
         self.addSubview(searchBar)
         self.addSubview(tableView)
     }
@@ -69,6 +70,14 @@ final class SearchView: UIView {
             make.right.equalTo(-10)
             make.left.bottom.equalToSuperview()
         }
+    }
+}
+
+extension SearchView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print(textField.text)
+        textField.resignFirstResponder()
+        return true
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 final class ProfileViewController: UIViewController {
     var user: User? = nil
@@ -44,6 +45,14 @@ final class ProfileViewController: UIViewController {
         customProfile.scrollViewProfile.didTapExit = { [weak self] button in
             AppSession.updateUser(isLoggedIn: false)
             self?.dismiss(animated: true)
+        }
+        
+        customProfile.scrollViewProfile.didTapLinkJob = { [weak self] button in
+            if let url = URL(string: "https://github.com/")
+             {
+               let safariVC = SFSafariViewController(url: url)
+                self?.present(safariVC, animated: true, completion: nil)
+             }
         }
     }
     
