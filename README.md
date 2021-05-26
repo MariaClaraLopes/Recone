@@ -1,19 +1,21 @@
 # Recone App IOS :iphone: :speaking_head: :brain:
 
-## :bookmark: Introduction
+## :pushpin: Introdução
 Aplicativo para da visibilidade para pessoas neurodivergentes.
 
-### :memo: Description
+### :memo: Descrição
 Nosso objetivo é combater o capacitismo, discriminação e o preconceito social contra pessoas neurodivergentes. Quebrando preconceitos e proporcionando o reconhecimento profissional dessas pessoas.
 
 Example 
 
-<img src="ImagesProject/Home.jpeg" width="260" > <img src="ImagesProject/Search.jpeg" width="260" > 
+<img src="ImagesProject/Home.jpeg" width="260" > 
 
-### :computer:  Certifique-se de ter instalado em sua máquina:
+<img src="ImagesProject/Search.jpeg" width="260" > 
+
+### :desktop_computer:  Deverá ter instalado em sua máquina:
 - [Cocoapods](https://guides.cocoapods.org/using/getting-started.html)
 
-### :nerd_face:  Como buildar o aplicativo na minha máquina?
+### :thinking:  Como buildar o app na sua máquina:
 - Entre dentro do diretório(pasta) `/Recone` pelo terminal e execute via command line:
 ```
 $ pod install
@@ -23,4 +25,4 @@ $ pod install
 
 - Selecione o simulador de sua preferência e build o projeto
 
-:white_check_mark: Pronto, se tudo ocorrer bem, você deverá ser capaz de rodar o projeto em sua máquina
+:star_struck: Pronto, se tudo ocorrer bem, você deverá ser capaz de rodar o projeto em sua máquina
