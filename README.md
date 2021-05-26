@@ -8,9 +8,9 @@ Nosso objetivo é combater o capacitismo, discriminação e o preconceito social
 
 Example 
 
-<img src="ImagesProject/Home.jpeg" width="260" > 
+<img src="ImagesProject/Home.jpeg" width="260" >   <img src="ImagesProject/InitialLogin.jpeg" width="260" >  <img src="ImagesProject/Login.jpeg" width="260" > 
 
-<img src="ImagesProject/Search.jpeg" width="260" > 
+<img src="ImagesProject/Info.jpeg" width="260" >   <img src="ImagesProject/Search.jpeg" width="260" >  <img src="ImagesProject/Profile.jpeg" width="260" > 
 
 ### :desktop_computer:  Deverá ter instalado em sua máquina:
 - [Cocoapods](https://guides.cocoapods.org/using/getting-started.html)
