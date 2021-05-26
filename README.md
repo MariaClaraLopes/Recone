@@ -1,12 +1,12 @@
 # Recone App IOS :iphone: :speaking_head: :brain:
 
 ## :pushpin: Introdução
-Aplicativo para da visibilidade para pessoas neurodivergentes.
+Aplicativo para dar visibilidade para pessoas neurodivergentes.
 
 ### :memo: Descrição
-Nosso objetivo é combater o capacitismo, discriminação e o preconceito social contra pessoas neurodivergentes. Quebrando preconceitos e proporcionando o reconhecimento profissional dessas pessoas.
+Nosso objetivo é combater o capacitismo, discriminação e o preconceito social contra pessoas neurodivergentes, quebrando preconceitos e proporcionando o reconhecimento profissional dessas pessoas.
 
-Example 
+Exemplo 
 
 <img src="ImagesProject/Home.jpeg" width="260" >   <img src="ImagesProject/InitialLogin.jpeg" width="260" >  <img src="ImagesProject/Login.jpeg" width="260" > 
 
