@@ -37,7 +37,6 @@ final class BiographyView: UIView {
     
     private let textAbout: UILabel = {
         let label = UILabel()
-        label.text = "Em 2018, depois de me aposentar, passei a me interessar por tecnologia e desde então venho aprimorando minhas habilidades como Dev Backend. Criei um grupo de apoio para mulheres desenvolvedoras online no Whatsapp para compartilhar conhecimento e continuar evoluindo! Nunca é tarde demais para adquirir novas habilidades."
         label.numberOfLines = 0
         label.font = Fonts.nunitoRegular(size: 16)
         return label
@@ -103,6 +102,10 @@ final class BiographyView: UIView {
     
     func updateAge(age: String) {
         ageSubTitle.text = age
+    }
+    
+    func updateText(text: String) {
+        textAbout.text = text
     }
 }
 

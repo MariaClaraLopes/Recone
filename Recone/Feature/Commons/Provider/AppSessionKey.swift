@@ -9,6 +9,7 @@ import Foundation
 
 enum AppSessionKey: String {
     case isLoggedIn
+    case id
 }
 
 class AppSession {
@@ -19,8 +20,16 @@ class AppSession {
         shared.databaseProvider.save(isLoggedIn: isLoggedIn, key: AppSessionKey.isLoggedIn.rawValue)
     }
     
+    static func updateUser(id: String) {
+        shared.databaseProvider.save(id: id, key: AppSessionKey.id.rawValue)
+    }
+    
     static func isUserLoggedIn() -> Bool {
         shared.databaseProvider.isLoggedIn(for: AppSessionKey.isLoggedIn.rawValue)
+    }
+    
+    static func getId() -> String {
+        shared.databaseProvider.getId(for: AppSessionKey.id.rawValue)
     }
 }
 

@@ -21,7 +21,6 @@ final class TableViewCellHome: UITableViewCell {
     private(set) var cellNameLabel: UILabel = {
         let label = UILabel()
         label.font = Fonts.nunitoSemiBold(size: 14)
-//        label.font = UIFont.systemFont(ofSize: 14.0, weight: .bold)
         label.textAlignment = .left
         label.textColor = UIColor(named: "Black")
         return label
@@ -30,7 +29,6 @@ final class TableViewCellHome: UITableViewCell {
     private(set) var cellOccupationLabel: UILabel = {
         let label = UILabel()
         label.font = Fonts.nunitoRegular(size: 14)
-//        label.font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
         label.textAlignment = .left
         label.textColor = UIColor(named: "Black")
         return label
@@ -46,7 +44,6 @@ final class TableViewCellHome: UITableViewCell {
     private(set) var cellCategoryLabel: UILabel = {
         let label = UILabel()
         label.font = Fonts.nunitoRegular(size: 14)
-//        label.font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
         label.textColor = UIColor(named: "White")
         return label
     }()

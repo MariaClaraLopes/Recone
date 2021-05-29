@@ -11,7 +11,6 @@ final class InfoViewController: UIViewController {
     private let customInfo = InfoView()
 
     override func loadView() {
-        super.loadView()
         self.view = customInfo
     }
     

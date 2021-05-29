@@ -75,7 +75,7 @@ final class GalleryView: UIView {
     func updateLayout(gallerys: [GalleryModel]) {
         clearStack()
         for gallery in gallerys {
-            let item = GalleryItemView.init(imageOne: gallery.imageGalleryOne, imageTwo: gallery.imageGalleryTwo, imageThree: gallery.imageGalleryThree)
+            let item = GalleryItemView(imageOne: gallery.imageGalleryOne, imageTwo: gallery.imageGalleryTwo, imageThree: gallery.imageGalleryThree)
             contentBox.addArrangedSubview(item)
         }
     }
@@ -83,9 +83,9 @@ final class GalleryView: UIView {
 
 extension GalleryView {
     struct GalleryModel {
-        let imageGalleryOne: UIImage
-        let imageGalleryTwo: UIImage
-        let imageGalleryThree: UIImage
+        let imageGalleryOne: String
+        let imageGalleryTwo: String
+        let imageGalleryThree: String
     }
     
     struct Dimension {

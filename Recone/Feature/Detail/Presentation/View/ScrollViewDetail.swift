@@ -10,9 +10,11 @@ import SnapKit
 
 final class ScrollViewDetail: UIView {
     
+    private var url: URL? = nil
+    
     var didTapBack: ((_ button: UIButton) -> Void)?
     
-    var didTapLinkJob: ((_ button: UIButton) -> Void)?
+    var didTapLinkJob: ((_ button: UIButton, _ url: URL) -> Void)?
     
     private let deviceWidth: CGFloat = UIScreen.main.bounds.width
     
@@ -120,7 +122,7 @@ final class ScrollViewDetail: UIView {
     private let galleryTitle: UILabel = {
         let label = UILabel()
         label.text = "Galeria"
-        label.font = UIFont.systemFont(ofSize: 20.0, weight: .bold)
+        label.font = Fonts.nunitoSemiBold(size: 20)
         label.textColor = UIColor(named: "LilacDark")
         return label
     }()
@@ -139,7 +141,9 @@ final class ScrollViewDetail: UIView {
     }
     
     @objc private func buttonLinkJobClicked(sender: UIButton) {
-        didTapLinkJob?(sender)
+        if let url = url {
+            didTapLinkJob?(sender, url)
+        }
     }
     
     @objc private func buttonBackClicked(sender: UIButton) {
@@ -272,6 +276,22 @@ final class ScrollViewDetail: UIView {
 
     func updateContactNumber(contactNumber: String) {
         contactNumberProfileLabel.text = contactNumber
+    }
+    
+    func updateUI(user: UserResponse) {
+        if let link = user.links?[0].url, let name = user.links?[0].name {
+            self.url = URL(string: link)
+            buttonLinkJob.setTitle(name, for: .normal)
+        }
+        let urlImage = URL(string: user.avatar)
+        imageProfileView.kf.setImage(with: urlImage)
+        nameProfileLabel.text = user.name
+        categoryProfileLabel.text = user.categorie
+        localizationProfileLabel.text = user.city
+        contactNumberProfileLabel.text = user.phone
+        biographyView.updateOccupation(occupation: user.occupation)
+        biographyView.updateAge(age: String(user.age))
+        biographyView.updateText(text: user.description)
     }
 }
 

@@ -17,17 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="Xb7-h7-r3r">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="Xb7-h7-r3r">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="896" id="huV-bM-7Bp"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InitialLoginLogo" translatesAutoresizingMaskIntoConstraints="NO" id="nDN-dL-ZLO">
-                                <rect key="frame" x="0.0" y="344.5" width="414" height="207"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="694-ma-0IN"/>
-                                    <constraint firstAttribute="height" constant="207" id="Hle-t5-Ztd"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -36,9 +29,7 @@
                         <constraints>
                             <constraint firstItem="Xb7-h7-r3r" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8R2-EB-1W2"/>
                             <constraint firstAttribute="bottom" secondItem="Xb7-h7-r3r" secondAttribute="bottom" id="Fb4-6r-R77"/>
-                            <constraint firstItem="nDN-dL-ZLO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="G8k-rc-aP5"/>
                             <constraint firstItem="Xb7-h7-r3r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eAW-yW-0CD"/>
-                            <constraint firstItem="nDN-dL-ZLO" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="nLD-eD-taS"/>
                             <constraint firstItem="Xb7-h7-r3r" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="oqx-dT-nxa"/>
                         </constraints>
                     </view>
@@ -49,8 +40,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="InitialLoginLogo" width="182" height="52"/>
-        <image name="LaunchScreen" width="210.5" height="397"/>
+        <image name="LaunchScreen" width="125" height="270.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

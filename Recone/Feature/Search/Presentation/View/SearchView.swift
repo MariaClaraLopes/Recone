@@ -8,7 +8,13 @@
 import UIKit
 import SnapKit
 
+protocol SearchViewDelegate {
+    func update(occupation: String)
+}
+
 final class SearchView: UIView {
+    
+    var delegate: SearchViewDelegate?
     
     private let searchBar: UISearchTextField = {
         let search = UISearchTextField()
@@ -75,7 +81,10 @@ final class SearchView: UIView {
 
 extension SearchView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print(textField.text)
+        if let occupation = textField.text {
+            let formatOcuppation = occupation.replacingOccurrences(of: " ", with: "%20")
+            delegate?.update(occupation: formatOcuppation)
+        }
         textField.resignFirstResponder()
         return true
     }

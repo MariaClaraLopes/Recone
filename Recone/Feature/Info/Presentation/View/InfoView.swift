@@ -54,7 +54,6 @@ final class InfoView: UIView {
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         label.font = Fonts.nunitoRegular(size: 16)
-        label.font = UIFont.systemFont(ofSize: 16.0, weight: .regular)
         label.textColor = UIColor(named: "Black")
         return label
     }()

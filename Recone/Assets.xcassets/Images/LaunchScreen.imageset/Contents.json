@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Captura de Tela 2021-05-21 às 11.52.36.png",
+      "filename" : "LaunchScreen.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Captura de Tela 2021-05-21 às 11.52.36@2x.png",
+      "filename" : "LaunchScreen@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Captura de Tela 2021-05-21 às 11.52.36@3x.png",
+      "filename" : "LaunchScreen@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

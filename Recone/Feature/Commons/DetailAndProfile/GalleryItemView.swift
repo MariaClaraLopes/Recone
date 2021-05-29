@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class GalleryItemView: UIView {
     
@@ -37,15 +38,15 @@ final class GalleryItemView: UIView {
         return image
     }()
     
-    convenience init(imageOne: UIImage, imageTwo: UIImage, imageThree: UIImage) {
+    convenience init(imageOne: String, imageTwo: String, imageThree: String) {
         self.init(frame: .zero, imageOne: imageOne, imageTwo: imageTwo, imageThree: imageThree)
     }
     
-    init(frame: CGRect, imageOne: UIImage, imageTwo: UIImage, imageThree: UIImage) {
+    init(frame: CGRect, imageOne: String, imageTwo: String, imageThree: String) {
         super.init(frame: frame)
-        imageGalleryOne.image = imageOne
-        imageGalleryTwo.image = imageTwo
-        imageGalleryThree.image = imageThree
+        imageGalleryOne.kf.setImage(with: URL(string: imageOne))
+        imageGalleryTwo.kf.setImage(with: URL(string: imageTwo))
+        imageGalleryThree.kf.setImage(with: URL(string: imageThree))
 
         setupView()
         setConstraints()

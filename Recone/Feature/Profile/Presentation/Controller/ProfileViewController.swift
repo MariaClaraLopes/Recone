@@ -9,33 +9,16 @@ import UIKit
 import SafariServices
 
 final class ProfileViewController: UIViewController {
-    var user: User? = nil
     
     private let customProfile = ProfileView()
         
     override func loadView() {
-        super.loadView()
         self.view = customProfile
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // ---- ExStarts
-        var dataAchievement: [AchievementsView.AchievementsModel] = []
-        for _ in 1...3 {
-            dataAchievement.append(AchievementsView.AchievementsModel(achievementSubTitle: "Trabalho Voluntário - Tech4Covid", dateAchievement: "Outubro de 2020"))
-        }
-        customProfile.scrollViewProfile.achievementsView.updateLayout(achievements: dataAchievement)
-        //---- ExEnd
-        
-        // --- Gallery
-        var dataGallery: [GalleryView.GalleryModel] = []
-        for _ in 1...2 {
-            dataGallery.append(GalleryView.GalleryModel(imageGalleryOne: UIImage(named: "TestGallery") ?? UIImage(), imageGalleryTwo: UIImage(named: "TestGallery") ?? UIImage(), imageGalleryThree: UIImage(named: "TestGallery") ?? UIImage()))
-        }
-        customProfile.scrollViewProfile.galleryView.updateLayout(gallerys: dataGallery)
-        // ----
         
         bind()
 
@@ -43,30 +26,15 @@ final class ProfileViewController: UIViewController {
     
     private func bind() {
         customProfile.scrollViewProfile.didTapExit = { [weak self] button in
-            AppSession.updateUser(isLoggedIn: false)
             self?.dismiss(animated: true)
         }
         
-        customProfile.scrollViewProfile.didTapLinkJob = { [weak self] button in
+        customProfile.scrollViewProfile.didTapLinkJob = { [weak self] button, url in
             if let url = URL(string: "https://github.com/")
              {
                let safariVC = SFSafariViewController(url: url)
                 self?.present(safariVC, animated: true, completion: nil)
              }
-        }
-    }
-    
-    func updateUser(user: User) {
-        self.user = user
-        if let safeUser = self.user {
-            customProfile.scrollViewProfile.updateImage(image: safeUser.image ?? UIImage())
-            customProfile.scrollViewProfile.updateName(name: safeUser.name ?? String())
-            customProfile.scrollViewProfile.updateCategory(category: safeUser.category ?? String())
-            customProfile.scrollViewProfile.updateLocalization(localization: safeUser.localization ?? String())
-            customProfile.scrollViewProfile.updateContactNumber(contactNumber: safeUser.contactNumber ?? String())
-            customProfile.scrollViewProfile.biographyView.updateOccupation(occupation: safeUser.occupation ?? String())
-            customProfile.scrollViewProfile.biographyView.updateAge(age: safeUser.age ?? String())
-            
         }
     }
 }

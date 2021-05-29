@@ -7,12 +7,22 @@
 
 import UIKit
 
+protocol LoginViewControllerDelegate {
+    func update(id: String)
+}
+
 class LoginViewController: UIViewController {
     private let customLogin = LoginView()
+    var delegate: LoginViewControllerDelegate?
     
     override func loadView() {
-        super.loadView()
         self.view = customLogin
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -22,51 +32,46 @@ class LoginViewController: UIViewController {
         customLogin.passwordTextField.text = ""
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        bind()
-    }
-    
     private func bind() {
-        let loginModel = LoginModel()
         customLogin.didTapOk = { [weak self] credential in
             guard let self = self else {return}
-            let emailTextField: String = self.customLogin.emailTextField.text?.replacingOccurrences(of: " ", with: "") ?? ""
-            let passwordTextField: String = self.customLogin.passwordTextField.text?.replacingOccurrences(of: " ", with: "") ?? ""
-            if emailTextField.isEmpty || passwordTextField.isEmpty {
+            
+//            let email: String = self.customLogin.emailTextField.text?.replacingOccurrences(of: " ", with: "") ?? ""
+//            let password: String = self.customLogin.passwordTextField.text?.replacingOccurrences(of: " ", with: "") ?? ""
+            let email: String = "Ana.Beatriz@gmail.com"
+            let password: String = "123456@Za"
+            
+            if email.isEmpty || password.isEmpty {
                 self.customLogin.loginError()
-            } else if emailTextField != loginModel.email || passwordTextField != loginModel.password {
-                self.customLogin.loginError()
-            } else if emailTextField == loginModel.email && passwordTextField == loginModel.password{
-                let user = self.makeUser()
-                self.makeController(user: user)
+            } else {
+                ApiService.postSignIn(email: email, password: password) { [weak self] result in
+                    switch result {
+                    case .success(let user):
+                        AppSession.updateUser(isLoggedIn: true)
+                        self?.delegate?.update(id: user.id)
+                        self?.dismiss(animated: true)
+                    case .failure(let error):
+                        self?.customLogin.loginError()
+                        debugPrint(error)
+                    }
+                }
             }
+            
+//            if email.isEmpty || password.isEmpty {
+//                self.customLogin.loginError()
+//            } else if emailTextField != loginModel.email || passwordTextField != loginModel.password {
+//                self.customLogin.loginError()
+//            } else if emailTextField == loginModel.email && passwordTextField == loginModel.password{
+//                AppSession.updateUser(isLoggedIn: true)
+//                let user = self.makeUser()
+//                self.delegate?.update(user: user)
+//                self.makeController()
+//            }
         }
         
         customLogin.didTapBack = { [weak self] button in
             self?.dismiss(animated: true)
         }
-    }
-    
-    private func makeController(user: User) {
-        let profileVC = ProfileViewController()
-        profileVC.updateUser(user: user)
-        profileVC.modalPresentationStyle = .fullScreen
-        self.present(profileVC, animated: true, completion: nil)
-        
-        AppSession.updateUser(isLoggedIn: true)
-    }
-    
-    private func makeUser() -> User {
-        let user = User(image: UIImage(named: "TestImage1"),
-                    name: "Maria Clara",
-                    age: "23 anos",
-                    category: "Tecnologia",
-                    occupation: "Desenvolvedor iOS",
-                    localization: "Belo Horizonte",
-                    contactNumber: "(11) 32820-4281")
-        
-        return user
     }
 }
 

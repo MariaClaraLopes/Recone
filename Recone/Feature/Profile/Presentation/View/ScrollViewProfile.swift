@@ -7,12 +7,15 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 final class ScrollViewProfile: UIView {
     
-    var didTapExit: ((_ button: UIButton) -> Void)?
+    private var url: URL? = nil
     
-    var didTapLinkJob: ((_ button: UIButton) -> Void)?
+    var didTapExit: ((_ button: UIButton) -> Void)?
+
+    var didTapLinkJob: ((_ button: UIButton, _ url: URL) -> Void)?
     
     private let deviceWidth: CGFloat = UIScreen.main.bounds.width
     
@@ -51,7 +54,7 @@ final class ScrollViewProfile: UIView {
     
     private let buttonExit: UIButton = {
         let button = UIButton(type: .system)
-        let image = UIImage.init(named: "ButtonExit")
+        let image = UIImage(named: "ButtonExit")
         button.setImage(image, for: .normal)
         button.tintColor = UIColor(named: "White")
         button.addTarget(self, action:#selector(buttonExitClicked), for: .touchUpInside)
@@ -68,7 +71,7 @@ final class ScrollViewProfile: UIView {
     
     private let nameProfileLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 24.0, weight: .bold)
+        label.font = Fonts.nunitoSemiBold(size: 24)
         label.textAlignment = .left
         label.textColor = UIColor(named: "White")
         return label
@@ -76,21 +79,21 @@ final class ScrollViewProfile: UIView {
     
     private let categoryProfileLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20.0, weight: .regular)
+        label.font = Fonts.nunitoRegular(size: 20)
         label.textColor = UIColor(named: "White")
         return label
     }()
     
     private let localizationProfileLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16.0, weight: .regular)
+        label.font = Fonts.nunitoRegular(size: 16)
         label.textColor = UIColor(named: "White")
         return label
     }()
 
     private let contactNumberProfileLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16.0, weight: .regular)
+        label.font = Fonts.nunitoRegular(size: 16)
         label.textColor = UIColor(named: "White")
         return label
     }()
@@ -105,9 +108,9 @@ final class ScrollViewProfile: UIView {
     private let buttonLinkJob: UIButton = {
         let button = UIButton(type: .system)
         button.setTitleColor(UIColor(named: "Black"), for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: .bold)
+        button.titleLabel?.font = Fonts.nunitoSemiBold(size: 16)
         button.addTarget(self, action:#selector(buttonLinkJobClicked), for: .touchUpInside)
-        button.setTitle("GITHUB", for: .normal)
+//        button.setTitle("GITHUB", for: .normal)
         return button
     }()
     
@@ -118,7 +121,7 @@ final class ScrollViewProfile: UIView {
     private let galleryTitle: UILabel = {
         let label = UILabel()
         label.text = "Galeria"
-        label.font = UIFont.systemFont(ofSize: 20.0, weight: .bold)
+        label.font = Fonts.nunitoSemiBold(size: 20)
         label.textColor = UIColor(named: "LilacDark")
         return label
     }()
@@ -137,10 +140,14 @@ final class ScrollViewProfile: UIView {
     }
         
     @objc private func buttonLinkJobClicked(sender: UIButton) {
-        didTapLinkJob?(sender)
+        if let url = url {
+            didTapLinkJob?(sender, url)
+        }
     }
     
     @objc private func buttonExitClicked(sender: UIButton) {
+        AppSession.updateUser(isLoggedIn: false)
+        AppSession.updateUser(id: "")
         didTapExit?(sender)
     }
 
@@ -149,26 +156,23 @@ final class ScrollViewProfile: UIView {
         tap.cancelsTouchesInView = false
         addGestureRecognizer(tap)
     }
-
+    
     private func setupView() {
         profileContentView.addSubview(buttonExit)
         profileContentView.addSubview(imageProfileView)
         profileContentView.addSubview(nameProfileLabel)
         profileContentView.addSubview(categoryProfileLabel)
-        profileContentView.addSubview(categoryProfileLabel)
+        profileContentView.addSubview(localizationProfileLabel)
         profileContentView.addSubview(contactNumberProfileLabel)
         profileContentView.addSubview(linkJobContentView)
         linkJobContentView.addSubview(buttonLinkJob)
-        
         contentBox.addArrangedSubview(profileContentView)
         contentBox.addArrangedSubview(biographyView)
         contentBox.addArrangedSubview(achievementsView)
         contentBox.addArrangedSubview(galleryView)
-
         containerView.addSubview(contentBox)
         wrapperView.addSubview(containerView)
         scrollView.addSubview(wrapperView)
-
         addSubview(scrollView)
     }
 
@@ -224,7 +228,7 @@ final class ScrollViewProfile: UIView {
             make.width.equalTo(deviceWidth - Dimension.widthOffset)
         }
         
-        categoryProfileLabel.snp.makeConstraints { make in
+        localizationProfileLabel.snp.makeConstraints { make in
             make.top.equalTo(categoryProfileLabel.snp.bottom).offset(14)
             make.left.equalTo(imageProfileView.snp.right).offset(24)
             make.height.equalTo(24)
@@ -232,7 +236,7 @@ final class ScrollViewProfile: UIView {
         }
         
         contactNumberProfileLabel.snp.makeConstraints { make in
-            make.top.equalTo(categoryProfileLabel.snp.bottom).offset(8)
+            make.top.equalTo(localizationProfileLabel.snp.bottom).offset(8)
             make.left.equalTo(imageProfileView.snp.right).offset(24)
             make.height.equalTo(24)
             make.width.equalTo(deviceWidth - Dimension.widthOffset)
@@ -268,11 +272,28 @@ final class ScrollViewProfile: UIView {
     }
 
     func updateLocalization(localization: String) {
-        categoryProfileLabel.text = localization
+        localizationProfileLabel.text = localization
     }
 
     func updateContactNumber(contactNumber: String) {
         contactNumberProfileLabel.text = contactNumber
+    }
+    
+    func updateUI(user: UserResponse) {
+        if let links = user.links {
+            self.url = URL(string: links[0].url)
+            buttonLinkJob.setTitle(links[0].name, for: .normal)
+        }
+        
+        let urlImage = URL(string: user.avatar)
+        imageProfileView.kf.setImage(with: urlImage)
+        nameProfileLabel.text = user.name
+        categoryProfileLabel.text = user.categorie
+        localizationProfileLabel.text = user.city
+        contactNumberProfileLabel.text = user.email
+        biographyView.updateOccupation(occupation: user.occupation)
+        biographyView.updateAge(age: String(user.age))
+        biographyView.updateText(text: user.description)
     }
 }
 

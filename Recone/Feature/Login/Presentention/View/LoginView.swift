@@ -63,7 +63,6 @@ final class LoginView: UIView {
     }()
     
     private(set) var emailTextField: UITextField = {
-        let loginModel = LoginModel()
         let textField = UITextField()
         textField.backgroundColor =  UIColor(named: "White")
         textField.keyboardType = .emailAddress
@@ -267,7 +266,8 @@ final class LoginView: UIView {
         }
         
         loginContentView.snp.makeConstraints { (make) in
-            make.centerY.centerX.equalToSuperview()
+            make.top.equalTo(logoContentView.snp.bottom).offset(50)
+            make.centerX.equalToSuperview()
             make.height.equalTo(190)
             make.left.right.equalToSuperview()
         }

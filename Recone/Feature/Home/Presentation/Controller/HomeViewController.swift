@@ -9,7 +9,8 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     private let customHome = HomeView()
-    private let data: [User] = UserFactory.registerUser()
+//    private let data: [User] = UserFactory.registerUser()
+    private var usersResponse: [UsersResponse]?
 
     override func loadView() {
         self.view = customHome
@@ -22,6 +23,19 @@ final class HomeViewController: UIViewController {
         customHome.tableView.dataSource = self
         customHome.tableView.delegate = self
         bind()
+        makeRequest()
+    }
+    
+    private func makeRequest() {
+        ApiService.getUsers(endPoint: .usersFavorites) { [weak self] result in
+            switch result {
+            case .success(let users):
+                self?.usersResponse = users
+                self?.customHome.tableView.reloadData()
+            case .failure(let error):
+                debugPrint(error)
+            }
+        }
     }
     
     private func bind() {
@@ -35,15 +49,22 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return usersResponse?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = customHome.tableView.dequeueReusableCell(withIdentifier: "CellHome", for: indexPath) as? TableViewCellHome else {fatalError("Unabel to create cell")}
-        cell.cellImageView.image = data[indexPath.row].image
-        cell.cellNameLabel.text = data[indexPath.row].name
-        cell.cellOccupationLabel.text = data[indexPath.row].occupation
-        cell.cellCategoryLabel.text = data[indexPath.row].category
+        let url = URL(string: usersResponse?[indexPath.row].avatar ?? "")
+        cell.cellImageView.kf.setImage(with: url)
+        cell.cellNameLabel.text = usersResponse?[indexPath.row].name
+        cell.cellOccupationLabel.text = usersResponse?[indexPath.row].occupation
+        cell.cellCategoryLabel.text = usersResponse?[indexPath.row].categorie
+        
+        
+//        cell.cellImageView.image = data[indexPath.row].image
+//        cell.cellNameLabel.text = data[indexPath.row].name
+//        cell.cellOccupationLabel.text = data[indexPath.row].occupation
+//        cell.cellCategoryLabel.text = data[indexPath.row].category
         cell.selectionStyle = .none
         return cell
     }
@@ -53,16 +74,14 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let user = data[indexPath.row]
-        let detailVC = DetailViewController()
-        detailVC.updateUser(user: user)
-        detailVC.modalPresentationStyle = .fullScreen
-        detailVC.modalTransitionStyle = .crossDissolve
-        present(detailVC, animated: true, completion: nil)
+//        let user = data[indexPath.row]
+        if let id = usersResponse?[indexPath.row].id {
+            let detailVC = DetailViewController()
+            detailVC.updateID(id: id)
+    //        detailVC.updateUser(user: user)
+            detailVC.modalPresentationStyle = .fullScreen
+            detailVC.modalTransitionStyle = .crossDissolve
+            present(detailVC, animated: true, completion: nil)
+        }
     }
 }
-
-
-
-
-

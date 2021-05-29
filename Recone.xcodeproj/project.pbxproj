@@ -10,6 +10,7 @@
 		053A3F5238BFAE7981325739 /* Pods_Recone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC588785E3885B293CC92F7 /* Pods_Recone.framework */; };
 		C0BF93433FF61FA05CF4A850 /* Pods_ReconeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E3423FEC66EC467ADB6A5B /* Pods_ReconeTests.framework */; };
 		C1DC44D1A94A66F7C1A0C037 /* Pods_Recone_ReconeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F4FF124F7061BDB88B8C33 /* Pods_Recone_ReconeUITests.framework */; };
+		CC26DFBD26615A3E0055F4BC /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC26DFBC26615A3E0055F4BC /* UserResponse.swift */; };
 		CCCA0DCA265D6AD900D434E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0DC9265D6AD900D434E4 /* AppDelegate.swift */; };
 		CCCA0DCC265D6AD900D434E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0DCB265D6AD900D434E4 /* SceneDelegate.swift */; };
 		CCCA0DCE265D6AD900D434E4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0DCD265D6AD900D434E4 /* HomeViewController.swift */; };
@@ -51,7 +52,6 @@
 		CCCA0E5C265D7A2C00D434E4 /* InitialLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0E5B265D7A2C00D434E4 /* InitialLoginViewController.swift */; };
 		CCCA0E65265D7BC100D434E4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0E64265D7BC100D434E4 /* LoginView.swift */; };
 		CCCA0E68265D7BE300D434E4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0E67265D7BE300D434E4 /* LoginViewController.swift */; };
-		CCCA0E6A265D7C3600D434E4 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0E69265D7C3600D434E4 /* LoginModel.swift */; };
 		CCCA0E71265D7CDB00D434E4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0E70265D7CDB00D434E4 /* ProfileView.swift */; };
 		CCCA0E73265D7CEA00D434E4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0E72265D7CEA00D434E4 /* ProfileViewController.swift */; };
 		CCCA0E75265D7D1400D434E4 /* ScrollViewProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0E74265D7D1400D434E4 /* ScrollViewProfile.swift */; };
@@ -62,6 +62,9 @@
 		CCCA0E80265D7E0600D434E4 /* GalleryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0E7F265D7E0600D434E4 /* GalleryItemView.swift */; };
 		CCCA0E83265D7E3700D434E4 /* ProviderDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0E82265D7E3700D434E4 /* ProviderDatabase.swift */; };
 		CCCA0E85265D7E4C00D434E4 /* AppSessionKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0E84265D7E4C00D434E4 /* AppSessionKey.swift */; };
+		CCCA0EC9265F029200D434E4 /* UsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0EC8265F029100D434E4 /* UsersResponse.swift */; };
+		CCCA0ECB265F02A500D434E4 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0ECA265F02A500D434E4 /* ApiService.swift */; };
+		CCE1BB352662CBDB006FB051 /* ApiServiceSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE1BB342662CBDB006FB051 /* ApiServiceSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,7 @@
 		4D257B775BD3F9577ACF31B3 /* Pods-Recone-ReconeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recone-ReconeUITests.release.xcconfig"; path = "Target Support Files/Pods-Recone-ReconeUITests/Pods-Recone-ReconeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4E4B58A2F5DB2A9D4E53E85A /* Pods-Recone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recone.debug.xcconfig"; path = "Target Support Files/Pods-Recone/Pods-Recone.debug.xcconfig"; sourceTree = "<group>"; };
 		C3472CD3064229B0432CC7E6 /* Pods-ReconeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReconeTests.debug.xcconfig"; path = "Target Support Files/Pods-ReconeTests/Pods-ReconeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CC26DFBC26615A3E0055F4BC /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		CCCA0DC6265D6AD900D434E4 /* Recone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCCA0DC9265D6AD900D434E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCCA0DCB265D6AD900D434E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,7 +140,6 @@
 		CCCA0E5B265D7A2C00D434E4 /* InitialLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialLoginViewController.swift; sourceTree = "<group>"; };
 		CCCA0E64265D7BC100D434E4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CCCA0E67265D7BE300D434E4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		CCCA0E69265D7C3600D434E4 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		CCCA0E70265D7CDB00D434E4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CCCA0E72265D7CEA00D434E4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CCCA0E74265D7D1400D434E4 /* ScrollViewProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewProfile.swift; sourceTree = "<group>"; };
@@ -147,6 +150,9 @@
 		CCCA0E7F265D7E0600D434E4 /* GalleryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemView.swift; sourceTree = "<group>"; };
 		CCCA0E82265D7E3700D434E4 /* ProviderDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDatabase.swift; sourceTree = "<group>"; };
 		CCCA0E84265D7E4C00D434E4 /* AppSessionKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSessionKey.swift; sourceTree = "<group>"; };
+		CCCA0EC8265F029100D434E4 /* UsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersResponse.swift; sourceTree = "<group>"; };
+		CCCA0ECA265F02A500D434E4 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		CCE1BB342662CBDB006FB051 /* ApiServiceSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceSearch.swift; sourceTree = "<group>"; };
 		F320BE533D20ED355B4737F4 /* Pods-ReconeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReconeTests.release.xcconfig"; path = "Target Support Files/Pods-ReconeTests/Pods-ReconeTests.release.xcconfig"; sourceTree = "<group>"; };
 		F7F4FF124F7061BDB88B8C33 /* Pods_Recone_ReconeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recone_ReconeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -200,6 +206,15 @@
 				F320BE533D20ED355B4737F4 /* Pods-ReconeTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CC26DFB9266142520055F4BC /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CCCA0EC8265F029100D434E4 /* UsersResponse.swift */,
+				CC26DFBC26615A3E0055F4BC /* UserResponse.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		CCCA0DBD265D6AD900D434E4 = {
@@ -293,6 +308,8 @@
 		CCCA0DFC265D6CE800D434E4 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				CC26DFB9266142520055F4BC /* Domain */,
+				CCCA0ECC265F1A1B00D434E4 /* Data */,
 				CCCA0E81265D7E2600D434E4 /* Provider */,
 				CCCA0E76265D7D2E00D434E4 /* DetailAndProfile */,
 				CCCA0E26265D6FB400D434E4 /* User */,
@@ -556,6 +573,7 @@
 		CCCA0E4D265D745400D434E4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CCE1BB342662CBDB006FB051 /* ApiServiceSearch.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -627,7 +645,6 @@
 		CCCA0E62265D7B5900D434E4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				CCCA0E69265D7C3600D434E4 /* LoginModel.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -698,6 +715,14 @@
 				CCCA0E84265D7E4C00D434E4 /* AppSessionKey.swift */,
 			);
 			path = Provider;
+			sourceTree = "<group>";
+		};
+		CCCA0ECC265F1A1B00D434E4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CCCA0ECA265F02A500D434E4 /* ApiService.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -966,18 +991,20 @@
 				CCCA0E68265D7BE300D434E4 /* LoginViewController.swift in Sources */,
 				CCCA0E5A265D79F900D434E4 /* InitialLoginView.swift in Sources */,
 				CCCA0E2A265D6FDB00D434E4 /* UserFactory.swift in Sources */,
-				CCCA0E6A265D7C3600D434E4 /* LoginModel.swift in Sources */,
 				CCCA0E05265D6DFC00D434E4 /* HomeView.swift in Sources */,
 				CCCA0E25265D6F7800D434E4 /* Fonts.swift in Sources */,
 				CCCA0E83265D7E3700D434E4 /* ProviderDatabase.swift in Sources */,
+				CCE1BB352662CBDB006FB051 /* ApiServiceSearch.swift in Sources */,
 				CCCA0E7A265D7DBE00D434E4 /* AchievementsView.swift in Sources */,
 				CCCA0E7C265D7DD800D434E4 /* AchievementItemView.swift in Sources */,
 				CCCA0E71265D7CDB00D434E4 /* ProfileView.swift in Sources */,
 				CCCA0E7E265D7DF000D434E4 /* GalleryView.swift in Sources */,
 				CCCA0E4F265D748B00D434E4 /* ScrollViewInfo.swift in Sources */,
 				CCCA0E65265D7BC100D434E4 /* LoginView.swift in Sources */,
+				CCCA0ECB265F02A500D434E4 /* ApiService.swift in Sources */,
 				CCCA0E46265D72B000D434E4 /* InfoViewController.swift in Sources */,
 				CCCA0E51265D76D500D434E4 /* SearchView.swift in Sources */,
+				CCCA0EC9265F029200D434E4 /* UsersResponse.swift in Sources */,
 				CCCA0E35265D70AA00D434E4 /* DetailViewController.swift in Sources */,
 				CCCA0E73265D7CEA00D434E4 /* ProfileViewController.swift in Sources */,
 				CCCA0DCC265D6AD900D434E4 /* SceneDelegate.swift in Sources */,
@@ -985,6 +1012,7 @@
 				CCCA0E28265D6FC500D434E4 /* User.swift in Sources */,
 				CCCA0E85265D7E4C00D434E4 /* AppSessionKey.swift in Sources */,
 				CCCA0E75265D7D1400D434E4 /* ScrollViewProfile.swift in Sources */,
+				CC26DFBD26615A3E0055F4BC /* UserResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1097,6 +1125,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1151,6 +1180,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1171,7 +1201,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mariaclaralopes.Recone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1191,7 +1221,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mariaclaralopes.Recone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
