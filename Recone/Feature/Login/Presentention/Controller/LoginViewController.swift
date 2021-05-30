@@ -36,10 +36,11 @@ class LoginViewController: UIViewController {
         customLogin.didTapOk = { [weak self] credential in
             guard let self = self else {return}
             
-//            let email: String = self.customLogin.emailTextField.text?.replacingOccurrences(of: " ", with: "") ?? ""
-//            let password: String = self.customLogin.passwordTextField.text?.replacingOccurrences(of: " ", with: "") ?? ""
-            let email: String = "Ana.Beatriz@gmail.com"
-            let password: String = "123456@Za"
+            let email: String = self.customLogin.emailTextField.text?.replacingOccurrences(of: " ", with: "") ?? ""
+            let password: String = self.customLogin.passwordTextField.text?.replacingOccurrences(of: " ", with: "") ?? ""
+            
+//            let email: String = "Ana.Beatriz@gmail.com"
+//            let password: String = "123456@Za"
             
             if email.isEmpty || password.isEmpty {
                 self.customLogin.loginError()

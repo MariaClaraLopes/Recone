@@ -30,11 +30,8 @@ final class ProfileViewController: UIViewController {
         }
         
         customProfile.scrollViewProfile.didTapLinkJob = { [weak self] button, url in
-            if let url = URL(string: "https://github.com/")
-             {
-               let safariVC = SFSafariViewController(url: url)
-                self?.present(safariVC, animated: true, completion: nil)
-             }
+            let safariVC = SFSafariViewController(url: url)
+            self?.present(safariVC, animated: true, completion: nil)
         }
     }
 }

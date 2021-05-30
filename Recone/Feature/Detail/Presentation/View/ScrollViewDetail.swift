@@ -111,7 +111,6 @@ final class ScrollViewDetail: UIView {
         button.setTitleColor(UIColor(named: "Black"), for: .normal)
         button.titleLabel?.font = Fonts.nunitoSemiBold(size: 16)
         button.addTarget(self, action:#selector(buttonLinkJobClicked), for: .touchUpInside)
-        button.setTitle("GITHUB", for: .normal)
         return button
     }()
     
@@ -284,7 +283,7 @@ final class ScrollViewDetail: UIView {
             buttonLinkJob.setTitle(name, for: .normal)
         }
         let urlImage = URL(string: user.avatar)
-        imageProfileView.kf.setImage(with: urlImage)
+        imageProfileView.reconeImageDownloader(with: urlImage)
         nameProfileLabel.text = user.name
         categoryProfileLabel.text = user.categorie
         localizationProfileLabel.text = user.city

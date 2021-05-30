@@ -35,9 +35,10 @@ final class BiographyView: UIView {
         return label
     }()
     
-    private let textAbout: UILabel = {
+    private(set) var textAbout: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
+        label.textColor = UIColor(named: "Black")
         label.font = Fonts.nunitoRegular(size: 16)
         return label
     }()
@@ -92,7 +93,6 @@ final class BiographyView: UIView {
             make.left.equalToSuperview().inset(24)
             make.top.equalTo(ageSubTitle.snp.bottom).offset(18)
             make.width.equalTo(deviceWidth - Dimension.widthOffset)
-            make.height.greaterThanOrEqualTo(192)
         }
     }
 

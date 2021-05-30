@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import Kingfisher
 
 final class ScrollViewProfile: UIView {
     
@@ -110,7 +109,6 @@ final class ScrollViewProfile: UIView {
         button.setTitleColor(UIColor(named: "Black"), for: .normal)
         button.titleLabel?.font = Fonts.nunitoSemiBold(size: 16)
         button.addTarget(self, action:#selector(buttonLinkJobClicked), for: .touchUpInside)
-//        button.setTitle("GITHUB", for: .normal)
         return button
     }()
     
@@ -286,11 +284,11 @@ final class ScrollViewProfile: UIView {
         }
         
         let urlImage = URL(string: user.avatar)
-        imageProfileView.kf.setImage(with: urlImage)
+        imageProfileView.reconeImageDownloader(with: urlImage)
         nameProfileLabel.text = user.name
         categoryProfileLabel.text = user.categorie
         localizationProfileLabel.text = user.city
-        contactNumberProfileLabel.text = user.email
+        contactNumberProfileLabel.text = user.phone
         biographyView.updateOccupation(occupation: user.occupation)
         biographyView.updateAge(age: String(user.age))
         biographyView.updateText(text: user.description)

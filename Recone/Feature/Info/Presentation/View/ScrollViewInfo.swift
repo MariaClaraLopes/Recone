@@ -47,6 +47,7 @@ final class ScrollViewInfo: UIView {
         let label = UILabel()
         label.text = "\n\nNossa plataforma foi criada para dar visibilidade às pessoas do espectro e seus talentos.\n\nBuscamos derrubar as barreiras do preconceito e do capacitismo para que clientes e recrutadores enxerguem o potencial dos profissionais e os contrate!\n\n"
         label.numberOfLines = 0
+        label.textColor = UIColor(named: "Black")
         label.font = Fonts.nunitoRegular(size: 16)
         return label
     }()
@@ -62,6 +63,7 @@ final class ScrollViewInfo: UIView {
         let label = UILabel()
         label.text = "\n\nO fato é que o mundo está mudando e nós precisamos acompanhá-lo. A diversidade, igualdade e inclusão passaram a ser mais do que pautas, são exigências.\n\nE nós da Recone acreditamos que excelentes profissionais neurodiversos são invisibilizados, por isso, decidimos dar luz e espaço para eles mostrarem seus talentos e serem reconhecidos por eles!"
         label.numberOfLines = 0
+        label.textColor = UIColor(named: "Black")
         label.font = Fonts.nunitoRegular(size: 16)
         return label
     }()

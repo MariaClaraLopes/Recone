@@ -11,6 +11,8 @@
 		C0BF93433FF61FA05CF4A850 /* Pods_ReconeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E3423FEC66EC467ADB6A5B /* Pods_ReconeTests.framework */; };
 		C1DC44D1A94A66F7C1A0C037 /* Pods_Recone_ReconeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F4FF124F7061BDB88B8C33 /* Pods_Recone_ReconeUITests.framework */; };
 		CC26DFBD26615A3E0055F4BC /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC26DFBC26615A3E0055F4BC /* UserResponse.swift */; };
+		CCB501072662F2AF0023A0BE /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB501062662F2AF0023A0BE /* UIImageView+Ext.swift */; };
+		CCB501092663E1B40023A0BE /* SearchErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB501082663E1B40023A0BE /* SearchErrorView.swift */; };
 		CCCA0DCA265D6AD900D434E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0DC9265D6AD900D434E4 /* AppDelegate.swift */; };
 		CCCA0DCC265D6AD900D434E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0DCB265D6AD900D434E4 /* SceneDelegate.swift */; };
 		CCCA0DCE265D6AD900D434E4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0DCD265D6AD900D434E4 /* HomeViewController.swift */; };
@@ -36,8 +38,6 @@
 		CCCA0E22265D6E9B00D434E4 /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CCCA0E14265D6E9A00D434E4 /* Nunito-Black.ttf */; };
 		CCCA0E23265D6E9B00D434E4 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CCCA0E15265D6E9B00D434E4 /* Nunito-Bold.ttf */; };
 		CCCA0E25265D6F7800D434E4 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0E24265D6F7800D434E4 /* Fonts.swift */; };
-		CCCA0E28265D6FC500D434E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0E27265D6FC500D434E4 /* User.swift */; };
-		CCCA0E2A265D6FDB00D434E4 /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0E29265D6FDB00D434E4 /* UserFactory.swift */; };
 		CCCA0E33265D708E00D434E4 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0E32265D708E00D434E4 /* DetailView.swift */; };
 		CCCA0E35265D70AA00D434E4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0E34265D70AA00D434E4 /* DetailViewController.swift */; };
 		CCCA0E38265D710900D434E4 /* TableViewCellHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA0E37265D710900D434E4 /* TableViewCellHome.swift */; };
@@ -93,6 +93,8 @@
 		4E4B58A2F5DB2A9D4E53E85A /* Pods-Recone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recone.debug.xcconfig"; path = "Target Support Files/Pods-Recone/Pods-Recone.debug.xcconfig"; sourceTree = "<group>"; };
 		C3472CD3064229B0432CC7E6 /* Pods-ReconeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReconeTests.debug.xcconfig"; path = "Target Support Files/Pods-ReconeTests/Pods-ReconeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC26DFBC26615A3E0055F4BC /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		CCB501062662F2AF0023A0BE /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		CCB501082663E1B40023A0BE /* SearchErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchErrorView.swift; sourceTree = "<group>"; };
 		CCCA0DC6265D6AD900D434E4 /* Recone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCCA0DC9265D6AD900D434E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCCA0DCB265D6AD900D434E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,8 +126,6 @@
 		CCCA0E14265D6E9A00D434E4 /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
 		CCCA0E15265D6E9B00D434E4 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		CCCA0E24265D6F7800D434E4 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		CCCA0E27265D6FC500D434E4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		CCCA0E29265D6FDB00D434E4 /* UserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFactory.swift; sourceTree = "<group>"; };
 		CCCA0E32265D708E00D434E4 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		CCCA0E34265D70AA00D434E4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CCCA0E37265D710900D434E4 /* TableViewCellHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellHome.swift; sourceTree = "<group>"; };
@@ -215,6 +215,14 @@
 				CC26DFBC26615A3E0055F4BC /* UserResponse.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		CCB501052662F2960023A0BE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CCB501062662F2AF0023A0BE /* UIImageView+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CCCA0DBD265D6AD900D434E4 = {
@@ -308,11 +316,11 @@
 		CCCA0DFC265D6CE800D434E4 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				CCB501052662F2960023A0BE /* Extensions */,
 				CC26DFB9266142520055F4BC /* Domain */,
 				CCCA0ECC265F1A1B00D434E4 /* Data */,
 				CCCA0E81265D7E2600D434E4 /* Provider */,
 				CCCA0E76265D7D2E00D434E4 /* DetailAndProfile */,
-				CCCA0E26265D6FB400D434E4 /* User */,
 				CCCA0E06265D6E5200D434E4 /* Fonts */,
 				CCCA0DFF265D6D6300D434E4 /* TabBar */,
 			);
@@ -386,15 +394,6 @@
 				CCCA0E0C265D6E9900D434E4 /* Nunito-SemiBoldItalic.ttf */,
 			);
 			path = CustomFonts;
-			sourceTree = "<group>";
-		};
-		CCCA0E26265D6FB400D434E4 /* User */ = {
-			isa = PBXGroup;
-			children = (
-				CCCA0E27265D6FC500D434E4 /* User.swift */,
-				CCCA0E29265D6FDB00D434E4 /* UserFactory.swift */,
-			);
-			path = User;
 			sourceTree = "<group>";
 		};
 		CCCA0E2B265D702900D434E4 /* Detail */ = {
@@ -551,6 +550,7 @@
 			children = (
 				CCCA0E50265D76D500D434E4 /* SearchView.swift */,
 				CCCA0E54265D772600D434E4 /* TableViewCellSearch.swift */,
+				CCB501082663E1B40023A0BE /* SearchErrorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -979,6 +979,7 @@
 			files = (
 				CCCA0DCE265D6AD900D434E4 /* HomeViewController.swift in Sources */,
 				CCCA0E33265D708E00D434E4 /* DetailView.swift in Sources */,
+				CCB501072662F2AF0023A0BE /* UIImageView+Ext.swift in Sources */,
 				CCCA0E3A265D718F00D434E4 /* ScrollViewDetail.swift in Sources */,
 				CCCA0E53265D771100D434E4 /* SearchViewController.swift in Sources */,
 				CCCA0E01265D6D9300D434E4 /* TabBarController.swift in Sources */,
@@ -990,7 +991,6 @@
 				CCCA0DCA265D6AD900D434E4 /* AppDelegate.swift in Sources */,
 				CCCA0E68265D7BE300D434E4 /* LoginViewController.swift in Sources */,
 				CCCA0E5A265D79F900D434E4 /* InitialLoginView.swift in Sources */,
-				CCCA0E2A265D6FDB00D434E4 /* UserFactory.swift in Sources */,
 				CCCA0E05265D6DFC00D434E4 /* HomeView.swift in Sources */,
 				CCCA0E25265D6F7800D434E4 /* Fonts.swift in Sources */,
 				CCCA0E83265D7E3700D434E4 /* ProviderDatabase.swift in Sources */,
@@ -1000,6 +1000,7 @@
 				CCCA0E71265D7CDB00D434E4 /* ProfileView.swift in Sources */,
 				CCCA0E7E265D7DF000D434E4 /* GalleryView.swift in Sources */,
 				CCCA0E4F265D748B00D434E4 /* ScrollViewInfo.swift in Sources */,
+				CCB501092663E1B40023A0BE /* SearchErrorView.swift in Sources */,
 				CCCA0E65265D7BC100D434E4 /* LoginView.swift in Sources */,
 				CCCA0ECB265F02A500D434E4 /* ApiService.swift in Sources */,
 				CCCA0E46265D72B000D434E4 /* InfoViewController.swift in Sources */,
@@ -1009,7 +1010,6 @@
 				CCCA0E73265D7CEA00D434E4 /* ProfileViewController.swift in Sources */,
 				CCCA0DCC265D6AD900D434E4 /* SceneDelegate.swift in Sources */,
 				CCCA0E78265D7D8D00D434E4 /* BiographyView.swift in Sources */,
-				CCCA0E28265D6FC500D434E4 /* User.swift in Sources */,
 				CCCA0E85265D7E4C00D434E4 /* AppSessionKey.swift in Sources */,
 				CCCA0E75265D7D1400D434E4 /* ScrollViewProfile.swift in Sources */,
 				CC26DFBD26615A3E0055F4BC /* UserResponse.swift in Sources */,

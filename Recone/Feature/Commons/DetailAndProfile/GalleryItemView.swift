@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 final class GalleryItemView: UIView {
     
@@ -44,9 +43,9 @@ final class GalleryItemView: UIView {
     
     init(frame: CGRect, imageOne: String, imageTwo: String, imageThree: String) {
         super.init(frame: frame)
-        imageGalleryOne.kf.setImage(with: URL(string: imageOne))
-        imageGalleryTwo.kf.setImage(with: URL(string: imageTwo))
-        imageGalleryThree.kf.setImage(with: URL(string: imageThree))
+        imageGalleryOne.reconeImageDownloader(with: URL(string: imageOne))
+        imageGalleryTwo.reconeImageDownloader(with: URL(string: imageTwo))
+        imageGalleryThree.reconeImageDownloader(with: URL(string: imageThree))
 
         setupView()
         setConstraints()

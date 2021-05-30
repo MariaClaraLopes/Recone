@@ -8,8 +8,7 @@ target 'Recone' do
   # Pods for Recone
     pod 'SnapKit', '~> 5.0.0'
     pod 'Alamofire', '~> 5.2'
-    pod 'Kingfisher', '~> 6.0'
-
+    pod 'SDWebImage', '~> 5.0'
 
   target 'ReconeTests' do
     inherit! :search_paths

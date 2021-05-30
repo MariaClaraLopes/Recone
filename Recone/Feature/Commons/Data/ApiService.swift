@@ -46,7 +46,6 @@ struct ApiService {
     
     static func getUsers(by id: String, endPoint: EndPoints, completionHandler: @escaping (Result<UserResponse, Error>) -> Void) {
         let url = makeUrl(endPoint: endPoint, filter: id)
-        print(url)
         
         AF.request(url, method: .get)
             .validate()
@@ -68,7 +67,6 @@ struct ApiService {
     
     static func getUsers(occupation: String, endPoint: EndPoints, completionHandler: @escaping (Result<[UsersResponse], Error>) -> Void) {
         let url = makeUrl(endPoint: endPoint, filter: occupation)
-        print(url)
         
         AF.request(url, method: .get)
             .validate()

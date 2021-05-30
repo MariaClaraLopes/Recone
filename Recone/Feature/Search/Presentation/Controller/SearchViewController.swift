@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 final class SearchViewController: UIViewController {
     private let customSearch = SearchView()
@@ -20,13 +19,18 @@ final class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupUI()
+        makeRequest()
+    }
+    
+    private func setupUI() {
+        customSearch.switchErrorView(isHidden: true)
         customSearch.tableView.backgroundColor = UIColor(named: "LilacLight")
         customSearch.tableView.separatorColor = UIColor(named: "LilacDark")
         customSearch.tableView.dataSource = self
         customSearch.tableView.delegate = self
         customSearch.delegate = self
-        
-        makeRequest()
     }
     
     private func makeRequest() {
@@ -52,7 +56,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
             return .init()
         }
         let url = URL(string: usersResponse?[indexPath.row].avatar ?? "")
-        cell.cellImageView.kf.setImage(with: url)
+        cell.cellImageView.reconeImageDownloader(with: url)
         cell.cellNameLabel.text = usersResponse?[indexPath.row].name
         cell.cellOccupationLabel.text = usersResponse?[indexPath.row].occupation
         cell.cellLocalizationLabel.text = usersResponse?[indexPath.row].city
@@ -82,8 +86,11 @@ extension SearchViewController: SearchViewDelegate {
         ApiService.getUsers(occupation: occupation, endPoint: .occupation) { [weak self] result in
             switch result {
             case .success(let users):
+                self?.customSearch.switchErrorView(isHidden: true)
                 self?.usersResponse = users
-                if users.count == 1 {
+                if users.isEmpty {
+                    self?.customSearch.switchErrorView(isHidden: false)
+                } else if users.count == 1 {
                     self?.customSearch.tableView.separatorColor = .clear
                 } else {
                     self?.customSearch.tableView.separatorColor = UIColor(named: "LilacDark")

@@ -69,6 +69,7 @@ final class LoginView: UIView {
         textField.attributedPlaceholder = NSAttributedString(string: "Insira seu email",
                                                              attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "GrayMedium") ?? .gray])
         textField.addTarget(self, action:#selector(emailChangeColorClickedTextField), for: .touchUpInside)
+        textField.textColor =  UIColor(named: "Black")
         return textField
     }()
     
@@ -96,6 +97,7 @@ final class LoginView: UIView {
         textField.attributedPlaceholder = NSAttributedString(string: "Insira a sua senha",
                                                              attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "GrayMedium") ?? .gray])
         textField.addTarget(self, action:#selector(passwordChangeColorClickedTextField), for: .touchUpInside)
+        textField.textColor =  UIColor(named: "Black")
         return textField
     }()
     
@@ -381,13 +383,13 @@ extension LoginView: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == emailTextField {
-            emailContentView.layer.borderColor = UIColor(named: "GrayLight")?.cgColor
+            emailContentView.layer.borderColor = UIColor(named: "White")?.cgColor
             emailContentView.backgroundColor = UIColor(named: "White")
             emailTextField.backgroundColor = UIColor(named: "White")
             imageErrorEmailView.isHidden = true
             errorLabel.isHidden = true
         } else if textField == passwordTextField {
-            passwordContentView.layer.borderColor =  UIColor(named: "GrayLight")?.cgColor
+            passwordContentView.layer.borderColor =  UIColor(named: "White")?.cgColor
             passwordContentView.backgroundColor = UIColor(named: "White")
             passwordTextField.backgroundColor = UIColor.init(named: "White")
             imageErrorPasswordView.isHidden = true

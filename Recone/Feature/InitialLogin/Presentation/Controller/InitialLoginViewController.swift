@@ -104,7 +104,6 @@ final class InitialLoginViewController: UIViewController {
     }
 
     private func makeGallery(gallery: [String]) {
-        // --- Gallery
         var dataGallery: [GalleryView.GalleryModel] = []
         dataGallery.append(GalleryView.GalleryModel(
                             imageGalleryOne: gallery[0],
@@ -116,19 +115,6 @@ final class InitialLoginViewController: UIViewController {
                             imageGalleryTwo: gallery[4],
                             imageGalleryThree: gallery[5]))
         customProfile.scrollViewProfile.galleryView.updateLayout(gallerys: dataGallery)
-        // ----
-
-        
-//        // --- Gallery
-//        var dataGallery: [GalleryView.GalleryModel] = []
-//        for _ in 1...2 {
-//            dataGallery.append(GalleryView.GalleryModel(
-//                imageGalleryOne: UIImage(named: "TestGallery") ?? UIImage(),
-//                imageGalleryTwo: UIImage(named: "TestGallery") ?? UIImage(),
-//                imageGalleryThree: UIImage(named: "TestGallery") ?? UIImage()))
-//        }
-//        customProfile.scrollViewProfile.galleryView.updateLayout(gallerys: dataGallery)
-//        // ----
     }
 }
 

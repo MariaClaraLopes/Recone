@@ -18,9 +18,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="Xb7-h7-r3r">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="-12" width="414" height="936"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="896" id="huV-bM-7Bp"/>
+                                    <constraint firstAttribute="height" constant="936" id="huV-bM-7Bp"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -28,9 +28,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Xb7-h7-r3r" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8R2-EB-1W2"/>
-                            <constraint firstAttribute="bottom" secondItem="Xb7-h7-r3r" secondAttribute="bottom" id="Fb4-6r-R77"/>
+                            <constraint firstAttribute="bottom" secondItem="Xb7-h7-r3r" secondAttribute="bottom" constant="-28" id="Fb4-6r-R77"/>
                             <constraint firstItem="Xb7-h7-r3r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eAW-yW-0CD"/>
-                            <constraint firstItem="Xb7-h7-r3r" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="oqx-dT-nxa"/>
+                            <constraint firstItem="Xb7-h7-r3r" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="-12" id="oqx-dT-nxa"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -40,7 +40,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchScreen" width="125" height="270.5"/>
+        <image name="LaunchScreen" width="383" height="820"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

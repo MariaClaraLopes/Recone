@@ -24,21 +24,6 @@ final class DetailViewController: UIViewController {
         
         bind()
         makeRequest()
-//        // ---- ExStarts
-//        var dataAchievement: [AchievementsView.AchievementsModel] = []
-//        for _ in 1...3 {
-//            dataAchievement.append(AchievementsView.AchievementsModel(achievementSubTitle: "Trabalho Voluntário - Tech4Covid", dateAchievement: "Outubro de 2020"))
-//        }
-//        customDetail.scrollViewDetail.achievementsView.updateLayout(achievements: dataAchievement)
-//        //---- ExEnd
-//
-//        // --- Gallery
-//        var dataGallery: [GalleryView.GalleryModel] = []
-//        for _ in 1...2 {
-//            dataGallery.append(GalleryView.GalleryModel(imageGalleryOne: UIImage(named: "TestGallery") ?? UIImage(), imageGalleryTwo: UIImage(named: "TestGallery") ?? UIImage(), imageGalleryThree: UIImage(named: "TestGallery") ?? UIImage()))
-//        }
-//        customDetail.scrollViewDetail.galleryView.updateLayout(gallerys: dataGallery)
-        // ----
     }
     
     private func bind() {
@@ -69,7 +54,6 @@ final class DetailViewController: UIViewController {
     }
     
     private func makeAchievements(achievements: [Achievements]) {
-        // ---- ExStarts
         var dataAchievement: [AchievementsView.AchievementsModel] = []
         for item in achievements {
             if let description = item.description, !item.name.isEmpty {
@@ -82,11 +66,9 @@ final class DetailViewController: UIViewController {
             }
         }
         customDetail.scrollViewDetail.achievementsView.updateLayout(achievements: dataAchievement)
-        //---- ExEnd
     }
     
     private func makeGallery(gallery: [String]) {
-        // --- Gallery
         var dataGallery: [GalleryView.GalleryModel] = []
         dataGallery.append(GalleryView.GalleryModel(
                             imageGalleryOne: gallery[0],
@@ -113,20 +95,6 @@ final class DetailViewController: UIViewController {
     func updateID(id: String) {
         self.id = id
     }
-    
-//    func updateUser(user: User) {
-//        self.user = user
-//        if let safeUser = self.user {
-//            customDetail.scrollViewDetail.updateImage(image: safeUser.image ?? UIImage())
-//            customDetail.scrollViewDetail.updateName(name: safeUser.name ?? String())
-//            customDetail.scrollViewDetail.updateCategory(category: safeUser.category ?? String())
-//            customDetail.scrollViewDetail.updateLocalization(localization: safeUser.localization ?? String())
-//            customDetail.scrollViewDetail.updateContactNumber(contactNumber: safeUser.contactNumber ?? String())
-//            customDetail.scrollViewDetail.biographyView.updateOccupation(occupation: safeUser.occupation ?? String())
-//            customDetail.scrollViewDetail.biographyView.updateAge(age: safeUser.age ?? String())
-//
-//        }
-//    }
 }
 
 

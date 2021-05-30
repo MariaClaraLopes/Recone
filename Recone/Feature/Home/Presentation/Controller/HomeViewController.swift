@@ -9,7 +9,6 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     private let customHome = HomeView()
-//    private let data: [User] = UserFactory.registerUser()
     private var usersResponse: [UsersResponse]?
 
     override func loadView() {
@@ -53,18 +52,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = customHome.tableView.dequeueReusableCell(withIdentifier: "CellHome", for: indexPath) as? TableViewCellHome else {fatalError("Unabel to create cell")}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellHome", for: indexPath) as? TableViewCellHome else {fatalError("Unabel to create cell")}        
         let url = URL(string: usersResponse?[indexPath.row].avatar ?? "")
-        cell.cellImageView.kf.setImage(with: url)
+        cell.cellImageView.reconeImageDownloader(with: url)
         cell.cellNameLabel.text = usersResponse?[indexPath.row].name
         cell.cellOccupationLabel.text = usersResponse?[indexPath.row].occupation
         cell.cellCategoryLabel.text = usersResponse?[indexPath.row].categorie
-        
-        
-//        cell.cellImageView.image = data[indexPath.row].image
-//        cell.cellNameLabel.text = data[indexPath.row].name
-//        cell.cellOccupationLabel.text = data[indexPath.row].occupation
-//        cell.cellCategoryLabel.text = data[indexPath.row].category
         cell.selectionStyle = .none
         return cell
     }
@@ -74,11 +67,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let user = data[indexPath.row]
         if let id = usersResponse?[indexPath.row].id {
             let detailVC = DetailViewController()
             detailVC.updateID(id: id)
-    //        detailVC.updateUser(user: user)
             detailVC.modalPresentationStyle = .fullScreen
             detailVC.modalTransitionStyle = .crossDissolve
             present(detailVC, animated: true, completion: nil)
