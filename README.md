@@ -1,4 +1,4 @@
-# Recone App IOS :iphone: :speaking_head: :brain:
+# Recone App IOS :iphone: :globe_with_meridians: :brain:
 
 ## :pushpin: Introdução
 Aplicativo para dar visibilidade para pessoas neurodivergentes.
@@ -13,9 +13,15 @@ Exemplo
 <img src="ImagesProject/Info.jpeg" width="260" >   <img src="ImagesProject/Search.jpeg" width="260" >  <img src="ImagesProject/Profile.jpeg" width="260" > 
 
 ### :bulb: Requisitos:
+
+Operacional:
 - iOS 13.0+ 
 - Xcode 12.5+
 - Swift 5.0+
+
+Login Teste:
+- Email: Ana.Beatriz@gmail.com
+- Senha: 123456@Za
 
 ### :desktop_computer:  Deverá ter instalado em sua máquina:
 - [Cocoapods](https://guides.cocoapods.org/using/getting-started.html)
