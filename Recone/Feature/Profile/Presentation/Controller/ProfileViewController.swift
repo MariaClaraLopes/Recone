@@ -9,7 +9,6 @@ import UIKit
 import SafariServices
 
 final class ProfileViewController: UIViewController {
-    
     private let customProfile = ProfileView()
         
     override func loadView() {
@@ -18,10 +17,7 @@ final class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         bind()
-
     }
     
     private func bind() {

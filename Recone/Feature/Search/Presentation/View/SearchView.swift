@@ -13,39 +13,22 @@ protocol SearchViewDelegate {
 }
 
 final class SearchView: UIView, UISearchBarDelegate {
-    
     var delegate: SearchViewDelegate?
     
     private let errorView = SearchErrorView()
     
     private let searchBar: UISearchTextField = {
-        let search = UISearchTextField()
+        var search = UISearchTextField()
         search.placeholder = "Escolha uma profissão"
         search.layer.cornerRadius = 8
         search.layer.borderColor = UIColor(named: "LilacDark")?.cgColor
         search.layer.borderWidth = 2
         search.textColor = UIColor(named: "Black")
-        
         search.keyboardType = .alphabet
+        search.layer.backgroundColor = UIColor.white.cgColor
+        search.backgroundColor = .white
         return search
     }()
-    
-    
-//    private let searchBar: UISearchBar = {
-//        let searchBar = UISearchBar()
-//        let searchBarMainColor = UIColor(named: "White")
-//        searchBar.searchTextField.textColor = searchBarMainColor
-//        searchBar.searchTextField.font = Fonts.nunitoRegular(size: 16)
-//        searchBar.searchTextField.backgroundColor = UIColor.white
-//        searchBar.setLeftImage(UIImage(systemName: "magnifyingglass") ?? UIImage(), with: 8, tintColor: UIColor(named: "LilacDark"))
-//        searchBar.clearBackgroundColor()
-//        searchBar.layer.cornerRadius = 8
-//        searchBar.layer.borderColor = UIColor(named: "LilacDark")?.cgColor
-//        searchBar.layer.borderWidth = 2
-//        searchBar.placeholder = "Escolha uma profissão"
-//        searchBar.keyboardType = .alphabet
-//        return searchBar
-//        }()
     
     private(set) var tableView: UITableView = {
         let table = UITableView()
@@ -123,59 +106,5 @@ extension SearchView: UITextFieldDelegate {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-//extension UISearchBar {
-//    public func clearBackgroundColor() {
-//        guard let UISearchBarBackground: AnyClass = NSClassFromString("UISearchBarBackground") else { return }
-//        for view in subviews {
-//            for subview in view.subviews where subview.isKind(of: UISearchBarBackground) {
-//                subview.alpha = 0
-//            }
-//        }
-//    }
-//
-//    public func setLeftImage(_ image: UIImage, with padding: CGFloat = 0, tintColor: UIColor? = UIColor(named: "LilacDark")) {
-//        let imageView = UIImageView()
-//        imageView.image = image
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
-//        imageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
-//        imageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
-//
-//        if let tintColor = tintColor {
-//            imageView.tintColor = tintColor
-//        }
-//
-//        if padding != 0 {
-//            let stackView = UIStackView()
-//            stackView.axis = .horizontal
-//            stackView.alignment = .center
-//            stackView.distribution = .fill
-//            stackView.translatesAutoresizingMaskIntoConstraints = false
-//
-//            let paddingView = UIView()
-//            paddingView.translatesAutoresizingMaskIntoConstraints = false
-//            paddingView.widthAnchor.constraint(equalToConstant: padding).isActive = true
-//            paddingView.heightAnchor.constraint(equalToConstant: padding).isActive = true
-//
-//            stackView.addArrangedSubview(imageView)
-//            stackView.addArrangedSubview(paddingView)
-//            searchTextField.leftView = stackView
-//        } else {
-//            searchTextField.leftView = imageView
-//        }
-//    }
-//}
 
 

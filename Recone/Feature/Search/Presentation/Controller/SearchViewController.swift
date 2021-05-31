@@ -9,8 +9,6 @@ import UIKit
 
 final class SearchViewController: UIViewController {
     private let customSearch = SearchView()
-    private let errorSearch = UIView()
-//    private let data: [User] = UserFactory.registerUser()
     private var usersResponse: [UsersResponse]?
 
     override func loadView() {
@@ -19,7 +17,6 @@ final class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
         makeRequest()
     }
@@ -69,7 +66,6 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let user = data[indexPath.row]
         if let id = usersResponse?[indexPath.row].id {
             let detailVC = DetailViewController()
             detailVC.updateID(id: id)
@@ -77,7 +73,6 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
             detailVC.modalTransitionStyle = .crossDissolve
             present(detailVC, animated: true, completion: nil)
         }
-//        detailVC.updateUser(user: user)
     }
 }
 

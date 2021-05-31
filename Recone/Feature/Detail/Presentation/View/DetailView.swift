@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 final class DetailView: UIView {
-    
     private(set) var scrollViewDetail = ScrollViewDetail()
     
     override init(frame: CGRect) {

@@ -45,6 +45,7 @@ final class BiographyView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        contentView.backgroundColor = UIColor(named: "LilacLight")
         setupView()
         setConstraints()
     }
@@ -54,7 +55,6 @@ final class BiographyView: UIView {
     }
     
     private func setupView() {
-        contentView.backgroundColor = UIColor(named: "LilacLight")
         contentView.addSubview(biographyTitle)
         contentView.addSubview(occupationSubTitle)
         contentView.addSubview(ageSubTitle)

@@ -14,7 +14,6 @@ struct UserResponse: Decodable {
     let avatar: String
     let categorie: String
     let city: String
-    let state: String
     let occupation: String
     let description: String
     let age: Int

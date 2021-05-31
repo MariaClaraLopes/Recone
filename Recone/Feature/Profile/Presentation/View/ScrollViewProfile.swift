@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 final class ScrollViewProfile: UIView {
-    
     private var url: URL? = nil
     
     var didTapExit: ((_ button: UIButton) -> Void)?
@@ -30,10 +29,7 @@ final class ScrollViewProfile: UIView {
     
     private let wrapperView = UIView()
 
-    private let containerView: UIView = {
-        let view = UIView()
-        return view
-    }()
+    private let containerView = UIView()
 
     private let contentBox: UIStackView = {
         let stack = UIStackView()

@@ -9,14 +9,13 @@ import UIKit
 import SnapKit
 
 final class LoginView: UIView {
-    
     var didTapOk: (((email: String, password: String)) -> Void)?
     
     var didTapBack: ((_ button: UIButton) -> Void)?
     
     private let mainImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage.init(named: "Login")
+        image.image = UIImage(named: "Login")
         return image
     }()
     
@@ -165,11 +164,11 @@ final class LoginView: UIView {
     @objc private func buttonHideClicked() {
         if passwordTextField.isSecureTextEntry == true {
             passwordTextField.isSecureTextEntry = false
-            let image = UIImage.init(named: "EyeHide")
+            let image = UIImage(named: "EyeHide")
             passwordHideButton.setImage(image, for: .normal)
         } else {
             passwordTextField.isSecureTextEntry = true
-            let image = UIImage.init(named: "Eye")
+            let image = UIImage(named: "Eye")
             passwordHideButton.setImage(image, for: .normal)
         }
     }
@@ -186,14 +185,10 @@ final class LoginView: UIView {
     private func setupView() {
         setupTap()
         setupisHidden(isHidden: true)
-        
         addSubview(mainImageView)
         addSubview(buttonBack)
-        
         addSubview(logoContentView)
-        
         logoContentView.addSubview(logotitleLabel)
-        
         addSubview(loginContentView)
         loginContentView.addSubview(emailLabelContentView)
         emailLabelContentView.addSubview(emailLabel)
@@ -204,12 +199,10 @@ final class LoginView: UIView {
         loginContentView.addSubview(passwordContentView)
         passwordContentView.addSubview(passwordTextField)
         passwordContentView.addSubview(passwordHideButton)
-        
         addSubview(buttonEnterContentView)
         buttonEnterContentView.addSubview(buttonEnter)
         emailContentView.addSubview(imageErrorEmailView)
         passwordContentView.addSubview(imageErrorPasswordView)
-        
         addSubview(errorLabel)
     }
     
@@ -391,7 +384,7 @@ extension LoginView: UITextFieldDelegate {
         } else if textField == passwordTextField {
             passwordContentView.layer.borderColor =  UIColor(named: "White")?.cgColor
             passwordContentView.backgroundColor = UIColor(named: "White")
-            passwordTextField.backgroundColor = UIColor.init(named: "White")
+            passwordTextField.backgroundColor = UIColor(named: "White")
             imageErrorPasswordView.isHidden = true
             passwordHideButton.isHidden = false
         }

@@ -107,15 +107,3 @@ struct ApiService {
             }
     }
 }
-
-
-//        AF.request(url, method: .get)
-//            .validate()
-//            .responseDecodable(of: [UsersResponse].self) { response in
-//                switch response.result {
-//                case .success(let users):
-//                    completionHandler(.success(users))
-//                case .failure(let error):
-//                    completionHandler(.failure(error))
-//                }
-//            }

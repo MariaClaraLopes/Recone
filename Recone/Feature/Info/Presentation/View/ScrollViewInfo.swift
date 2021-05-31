@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 final class ScrollViewInfo: UIView {
-    
     private let deviceWidth: CGFloat = UIScreen.main.bounds.width
     
     private let scrollView: UIScrollView = {
@@ -22,10 +21,7 @@ final class ScrollViewInfo: UIView {
     
     private let wrapperView = UIView()
 
-    private let containerView: UIView = {
-        let view = UIView()
-        return view
-    }()
+    private let containerView = UIView()
 
     private let contentBox: UIStackView = {
         let stack = UIStackView()

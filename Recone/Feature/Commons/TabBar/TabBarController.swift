@@ -18,9 +18,9 @@ final class TabBarController: UITabBarController {
         let searchVC = customSearch
         let initialLoginVC = customInitialLogin
         
-        homeVC.tabBarItem = UITabBarItem.init(title: "Início", image: UIImage(named: "IconHome"), tag: 1)
-        searchVC.tabBarItem = UITabBarItem.init(title: "Buscar", image: UIImage(named: "IconSearch"), tag: 2)
-        initialLoginVC.tabBarItem = UITabBarItem.init(title: "Perfil", image: UIImage(named: "IconProfile"), tag: 3)
+        homeVC.tabBarItem = UITabBarItem(title: "Início", image: UIImage(named: "IconHome"), tag: 1)
+        searchVC.tabBarItem = UITabBarItem(title: "Buscar", image: UIImage(named: "IconSearch"), tag: 2)
+        initialLoginVC.tabBarItem = UITabBarItem(title: "Perfil", image: UIImage(named: "IconProfile"), tag: 3)
         
         let controllers = [homeVC,searchVC,initialLoginVC]
         self.setViewControllers(controllers, animated: false)

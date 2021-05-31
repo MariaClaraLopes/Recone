@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 final class ProfileView: UIView {
-    
     private(set) var scrollViewProfile = ScrollViewProfile()
     
     override init(frame: CGRect) {

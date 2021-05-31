@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 final class InfoView: UIView {
-    
     var didTapBack: ((_ button: UIButton) -> Void)?
     
     private let logoContentView = UIView()

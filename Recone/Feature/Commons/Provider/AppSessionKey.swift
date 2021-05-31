@@ -12,7 +12,7 @@ enum AppSessionKey: String {
     case id
 }
 
-class AppSession {
+final class AppSession {
     private let databaseProvider = ProviderDatabase()
     static let shared: AppSession = AppSession()
     

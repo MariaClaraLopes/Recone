@@ -17,12 +17,16 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        customHome.tableView.backgroundColor = UIColor(named: "LilacLight")
-        customHome.tableView.separatorColor = UIColor(named: "LilacDark")
+        setupUI()
         customHome.tableView.dataSource = self
         customHome.tableView.delegate = self
         bind()
         makeRequest()
+    }
+    
+    private func setupUI() {
+        customHome.tableView.backgroundColor = UIColor(named: "LilacLight")
+        customHome.tableView.separatorColor = UIColor(named: "LilacDark")
     }
     
     private func makeRequest() {
@@ -63,7 +67,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.backgroundColor = UIColor.init(named: "LilacLight")
+        cell.backgroundColor = UIColor(named: "LilacLight")
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

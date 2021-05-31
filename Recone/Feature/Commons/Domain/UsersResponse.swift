@@ -10,10 +10,8 @@ import Foundation
 struct UsersResponse: Decodable {
     let id: String
     let name: String
-    let email: String
     let avatar: String
     let categorie: String
     let city: String
-    let state: String
     let occupation: String
 }

@@ -9,8 +9,6 @@ import UIKit
 import SafariServices
 
 final class DetailViewController: UIViewController {
-    
-//    var user: User? = nil
     private var id: String? = nil
     private var user: UserResponse? = nil
     private let customDetail = DetailView()

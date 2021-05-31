@@ -75,7 +75,7 @@ final class AchievementsView: UIView {
     func updateLayout(achievements: [AchievementsModel]) {
         clearStack()
         for achivement in achievements {
-            let item = AchievementItemView.init(title: achivement.achievementSubTitle,
+            let item = AchievementItemView(title: achivement.achievementSubTitle,
                                                 subTitle: achivement.dateAchievement)
             contentBox.addArrangedSubview(item)
         }

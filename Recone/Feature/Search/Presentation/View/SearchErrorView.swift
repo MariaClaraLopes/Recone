@@ -9,17 +9,15 @@ import UIKit
 import SnapKit
 
 class SearchErrorView: UIView {
-    
     private let logoContentView = UIView()
     
     private let logoTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Poxa, ainda não temos esse profissional por aqui..."
-//        label.font = Fonts.nunitoRegular(size: 20)
+        label.font = Fonts.nunitoRegular(size: 20)
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.font = UIFont.init(name: "Arial", size: 20)
         label.textColor = UIColor(named: "Black")
         return label
     }()
@@ -27,11 +25,10 @@ class SearchErrorView: UIView {
     private let logoSubTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Lembre-se que você deve realizar buscas pela profissão da pessoa que deseja contratar."
-//        label.font = Fonts.nunitoRegular(size: 16)
+        label.font = Fonts.nunitoRegular(size: 16)
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.font = UIFont.init(name: "Arial", size: 16)
         label.textColor = UIColor(named: "Black")
         return label
     }()
@@ -62,7 +59,6 @@ class SearchErrorView: UIView {
     
     private func setConstraints() {
         logoContentView.snp.makeConstraints { (make) in
-//            make.top.equalTo(searhBar.snp.bottom).offset(48)
             make.top.equalToSuperview()
             make.centerX.equalToSuperview()
             make.height.equalTo(356)
@@ -71,7 +67,7 @@ class SearchErrorView: UIView {
         
         logoTitleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.height.equalTo(48)
+            make.height.equalTo(60)
             make.left.equalToSuperview().offset(38)
             make.right.equalToSuperview().offset(-38)
         }

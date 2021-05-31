@@ -20,13 +20,11 @@ final class InitialLoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         if AppSession.isUserLoggedIn() {
             makeRequest()
         }
@@ -40,11 +38,9 @@ final class InitialLoginViewController: UIViewController {
             loginVC.delegate = self
             self?.present(loginVC, animated: true, completion: nil)
         }
-        
         customProfile.scrollViewProfile.didTapExit = { [weak self] button in
             self?.updateView()
         }
-        
         customProfile.scrollViewProfile.didTapLinkJob = { [weak self] button, url in
             let safariVC = SFSafariViewController(url: url)
             self?.present(safariVC, animated: true, completion: nil)
@@ -76,7 +72,6 @@ final class InitialLoginViewController: UIViewController {
     }
     
     private func makeAchievements(achievements: [Achievements]) {
-        // ---- ExStarts
         var dataAchievement: [AchievementsView.AchievementsModel] = []
         for item in achievements {
             if let description = item.description, !item.name.isEmpty {
@@ -89,8 +84,6 @@ final class InitialLoginViewController: UIViewController {
             }
         }
         customProfile.scrollViewProfile.achievementsView.updateLayout(achievements: dataAchievement)
-        //---- ExEnd
-
     }
     
     private func validate(achievements: [Achievements], gallery: [String]) {
@@ -109,7 +102,6 @@ final class InitialLoginViewController: UIViewController {
                             imageGalleryOne: gallery[0],
                             imageGalleryTwo: gallery[1],
                             imageGalleryThree: gallery[2]))
-        
         dataGallery.append(GalleryView.GalleryModel(
                             imageGalleryOne: gallery[3],
                             imageGalleryTwo: gallery[4],

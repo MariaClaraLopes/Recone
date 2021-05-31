@@ -9,12 +9,11 @@ import UIKit
 import SnapKit
 
 final class InitialLoginView: UIView {
-    
     var didTapOk: ((_ button: UIButton) -> Void)?
     
     private let mainImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage.init(named: "InitialLogin")
+        image.image = UIImage(named: "InitialLogin")
         return image
     }()
     

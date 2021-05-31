@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 final class TableViewCellSearch: UITableViewCell {
-    
     private(set) var cellImageView: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill

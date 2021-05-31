@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 final class HomeView: UIView {
-    
     var didTapInfo: ((_ button: UIButton) -> Void)?
     
     private let logoContentView = UIView()
@@ -22,7 +21,7 @@ final class HomeView: UIView {
     
     private let buttonInfo: UIButton = {
         let button = UIButton(type: .system)
-        let image = UIImage.init(named: "ButtonInfo")
+        let image = UIImage(named: "ButtonInfo")
         button.setImage(image, for: .normal)
         button.tintColor = UIColor(named: "LilacDark")
         button.setTitleColor(UIColor(named: "LilacDark"), for: .normal)
