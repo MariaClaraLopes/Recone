@@ -8,7 +8,6 @@
 import UIKit
 
 final class BiographyView: UIView {
-    
     private let contentView: UIView = UIView()
     
     private let deviceWidth: CGFloat = UIScreen.main.bounds.width

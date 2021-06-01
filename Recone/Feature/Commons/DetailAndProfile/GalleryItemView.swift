@@ -8,7 +8,6 @@
 import UIKit
 
 final class GalleryItemView: UIView {
-    
     private let contentView: UIView = UIView()
     
     private let deviceWidth: CGFloat = UIScreen.main.bounds.width

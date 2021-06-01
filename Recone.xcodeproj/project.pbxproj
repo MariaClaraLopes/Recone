@@ -416,8 +416,6 @@
 			isa = PBXGroup;
 			children = (
 				CCCA0E40265D726C00D434E4 /* Presentation */,
-				CCCA0E47265D733200D434E4 /* Domain */,
-				CCCA0E48265D734200D434E4 /* Data */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -478,20 +476,6 @@
 				CCCA0E45265D72B000D434E4 /* InfoViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		CCCA0E47265D733200D434E4 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		CCCA0E48265D734200D434E4 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		CCCA0E49265D743300D434E4 /* Presentation */ = {
