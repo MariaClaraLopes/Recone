@@ -4,7 +4,8 @@
 Aplicativo para dar visibilidade para pessoas neurodivergentes.
 
 ### :memo: Descrição
-Nosso objetivo é combater o capacitismo, discriminação e o preconceito social contra pessoas neurodivergentes, quebrando preconceitos e proporcionando o reconhecimento profissional dessas pessoas.
+O aplicativo foi criado com o intuito de ser uma rede social para pessoas neurodiversas cadastrarem seus perfis. O objetivo do projeto é combater o capacitismo, discriminação e o preconceito social contra pessoas neurodivergentes, proporcionando o reconhecimento profissional dessas pessoas e quebrando preconceitos. No aplicativo, os usuários podem cadastrar seus perfis e descrever suas habilidades, experiências profissionais e interesses. A plataforma permite que empresas e profissionais entrem em contato com pessoas neurodiversas para oportunidades de trabalho e projetos.
+O aplicativo foi desenvolvido utilizando viewcode com UIKit na linguagem de programação Swift. O design clean e moderno foi cuidadosamente pensado para ser amigável e acolhedor para pessoas neurodiversas, utilizamos a cor roxa e tons claros, pois essas cores são mais suaves e não sobrecarregam visualmente. Sabemos que pessoas neurodiversas podem ter sensibilidades sensoriais, portanto, optamos por um design que minimize estímulos visuais excessivos. O desenvolvimento desse projeto foi uma experiência enriquecedora, apesar de ser um MVP ele tem grande potencial de impactar positivamente a vida de muitas pessoas, com isso pude contribuir para a construção de uma plataforma que promove a inclusão e valoriza as habilidades e talentos das pessoas neurodiversas.
 
 Exemplo 
 
